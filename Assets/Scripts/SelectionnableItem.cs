@@ -7,5 +7,9 @@ public class SelectionnableItem : MonoBehaviour
     private SelectionController _selectionController = null;
 
     private void Awake() => _selectionController = FindObjectOfType<SelectionController>();
-    private void OnMouseUp() => _selectionController.OnClick(Item);
+    private void OnMouseUp()
+    {
+        Item.Container = GetComponents<ITagResponse>();
+        _selectionController.OnClick(Item);
+    }
 }

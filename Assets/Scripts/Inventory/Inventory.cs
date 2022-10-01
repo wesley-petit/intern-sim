@@ -8,8 +8,8 @@ public class Inventory : MonoBehaviour
 
     public List<ItemSO> Items = new List<ItemSO>();
 
-    public UnityEvent<ItemSO> OnAdd = null;
-    public UnityEvent<ItemSO> OnRemove = null;
+    public UnityEvent OnAdd = null;
+    public UnityEvent OnRemove = null;
 
     private void Awake() => playerInventory = this;
 
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
         }
 
         Items.Add(itemSo);
-        OnAdd?.Invoke(itemSo);
+        OnAdd?.Invoke();
     }
 
     public void Remove(ItemSO itemSo)
@@ -36,6 +36,6 @@ public class Inventory : MonoBehaviour
         }
 
         Items.Remove(itemSo);
-        OnRemove?.Invoke(itemSo);
+        OnRemove?.Invoke();
     }
 }

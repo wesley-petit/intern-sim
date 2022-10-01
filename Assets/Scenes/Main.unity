@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 224459277}
   - component: {fileID: 224459276}
   - component: {fileID: 224459275}
+  - component: {fileID: 224459281}
+  - component: {fileID: 224459280}
   m_Layer: 0
   m_Name: Printer
   m_TagString: Untagged
@@ -278,6 +280,36 @@ Transform:
   m_Father: {fileID: 591711521}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &224459280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224459274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187069d049177534aa62ee545d361482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 2
+  MeshFilter: {fileID: 224459278}
+  NewMesh: {fileID: 0}
+--- !u!114 &224459281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224459274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187069d049177534aa62ee545d361482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: 1
+  MeshFilter: {fileID: 224459278}
+  NewMesh: {fileID: 0}
 --- !u!1 &423157775
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +565,7 @@ GameObject:
   - component: {fileID: 1181112892}
   - component: {fileID: 1181112893}
   - component: {fileID: 1181112894}
+  - component: {fileID: 1181112895}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -570,7 +603,19 @@ MonoBehaviour:
   Items: []
   OnAdd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1181112895}
+        m_TargetAssemblyTypeName: RecipeController, Assembly-CSharp
+        m_MethodName: CheckRecipes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnRemove:
     m_PersistentCalls:
       m_Calls: []
@@ -586,6 +631,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51179611e24eb547b85c46ca2f7b892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1181112895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181112891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f386085237812fb448614b3bab4eca76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllRecipes:
+  - {fileID: 11400000, guid: b737c4aa25b7ec647912a3930ce06eac, type: 2}
+  Original: {fileID: 3063685269104387054, guid: 99de86eb575c1ce488eb7c0e4be2b9c9, type: 3}
 --- !u!1 &1366338825
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: BrokenPrinter
   Sprite: {fileID: 0}
+  Container: {fileID: 0}
+  InitialTags: 
