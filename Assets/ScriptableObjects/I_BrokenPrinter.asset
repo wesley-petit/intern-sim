@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c50732956e3d644da805fa339b63937, type: 3}
-  m_Name: I_Printer
+  m_Name: I_BrokenPrinter
   m_EditorClassIdentifier: 
   Name: Printer
-  Model: {fileID: 1678487781463062073, guid: dd199812d62f14c4f953eb7fb6b864e1, type: 3}
-  Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  InitialState: 
+  Model: {fileID: 1678487781463062073, guid: 9ba5db19ea7b2a642b23635b896cd4ab, type: 3}
+  Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  InitialState: 02000000
   Container: {fileID: 0}

@@ -6,7 +6,9 @@ using System.Collections.Generic;
 public class ItemSO : ScriptableObject
 {
     public string Name;
-    public Image Sprite;
-    public ITagResponse Container;
-    public List<Tag> InitialTags = new List<Tag>();
+    public GameObject Model;
+    public Sprite Sprite;
+    public List<State> InitialState = new();
+
+    [HideInInspector] public ItemContainer Container;
 }

@@ -3,47 +3,73 @@ using UnityEngine;
 public class RecipeController : MonoBehaviour
 {
     public RecipeSO[] AllRecipes;
-    public GameObject Original;
 
     public void CheckRecipes()
     {
+        RecipeSO recipe = GetRecipe();
+
+        if (recipe)
+        {
+            EmptyRecipeSlot(recipe);
+            Execute(recipe);
+        }
+    }
+    
+    public RecipeSO GetRecipe()
+    {
+        RecipeSO recipeFound = null;
         bool bSuccess = false;
 
         foreach (var recipe in AllRecipes)
         {
             foreach (var ingredient in recipe.Ingredients)
             {
-                if (!Inventory.playerInventory.Contains(ingredient.Item))
+                if (!Inventory.playerInventory.Contains(ingredient.ItemIn))
                 {
                     bSuccess = false;
                     break;
                 }
-
+                
                 bSuccess = true;
             }
 
             if (bSuccess)
             {
-                Manage(recipe);
+                recipeFound = recipe;
                 break;
             }
         }
+
+        return recipeFound;
     }
 
-    public void Manage(RecipeSO recipe)
+    private void EmptyRecipeSlot(RecipeSO recipe)
     {
         foreach (var ingredient in recipe.Ingredients)
         {
-            ITagResponse tagResponse = ingredient.Item.Container;
-
-            if (tagResponse == null)
+            ItemContainer itemContainer = ingredient.ItemIn.Container;
+            if (itemContainer == null)
             {
-                Debug.LogError($"Unknow response from : {ingredient.Item.Name}");
+                Debug.LogError($"Unknow response from : {ingredient.ItemIn.Name}");
                 continue;
             }
 
-            tagResponse.Add(ingredient.AddedTag);
-            tagResponse.Remove(ingredient.RemoveTag);
+            Inventory.playerInventory.Remove(itemContainer.GetItem());
+        }
+    }
+    
+    public void Execute(RecipeSO recipe)
+    {
+        foreach (var ingredient in recipe.Ingredients)
+        {
+            ItemContainer itemContainer = ingredient.ItemIn.Container;
+            if (itemContainer == null)
+            {
+                Debug.LogError($"Unknow response from : {ingredient.ItemIn.Name}");
+                continue;
+            }
+
+            itemContainer.Load(ingredient.ItemOut);
         }
     }
 }

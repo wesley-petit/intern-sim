@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum Tag
+public enum State
 {
     None,
     Normal,
@@ -11,15 +11,14 @@ public enum Tag
 }
 
 [System.Serializable]
-public struct UseItem
+public struct ItemTransformation
 {
-    public ItemSO Item;
-    public Tag AddedTag;
-    public Tag RemoveTag;
+    public ItemSO ItemIn;
+    public ItemSO ItemOut;
 }
 
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Gamagora/Recipe")]
 public class RecipeSO : ScriptableObject
 {
-    public List<UseItem> Ingredients = new List<UseItem>();
+    public List<ItemTransformation> Ingredients = new();
 }

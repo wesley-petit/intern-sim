@@ -4,38 +4,38 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory playerInventory = null;
+    public static Inventory playerInventory;
 
-    public List<ItemSO> Items = new List<ItemSO>();
+    public List<ItemSO> Items = new();
 
-    public UnityEvent OnAdd = null;
-    public UnityEvent OnRemove = null;
+    public UnityEvent OnAdd;
+    public UnityEvent OnRemove;
 
     private void Awake() => playerInventory = this;
 
-    public bool Contains(ItemSO itemSo) => Items.Contains(itemSo);
+    public bool Contains(ItemSO item) => Items.Contains(item);
 
-    public void Add(ItemSO itemSo)
+    public void Add(ItemSO item)
     {
-        if (Items.Contains(itemSo))
+        if (Items.Contains(item))
         {
-            Debug.LogWarning($"Item {itemSo.name} is already present.");
+            Debug.LogWarning($"Item {item.Name} is already present.");
             return;
         }
 
-        Items.Add(itemSo);
+        Items.Add(item);
         OnAdd?.Invoke();
     }
 
-    public void Remove(ItemSO itemSo)
+    public void Remove(ItemSO item)
     {
-        if (!Items.Contains(itemSo))
+        if (!Items.Contains(item))
         {
-            Debug.LogWarning($"Ask to remove {itemSo.name}, but it wasn't present in the inventory.");
+            Debug.LogWarning($"Ask to remove {item.Name}, but it wasn't present in the inventory.");
             return;
         }
 
-        Items.Remove(itemSo);
+        Items.Remove(item);
         OnRemove?.Invoke();
     }
 }
