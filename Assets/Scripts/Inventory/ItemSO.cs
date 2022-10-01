@@ -7,6 +7,6 @@ public class ItemSO : ScriptableObject
 {
     public string Name;
     public Image Sprite;
-    public ITagResponse[] Container;
+    public ITagResponse Container;
     public List<Tag> InitialTags = new List<Tag>();
 }

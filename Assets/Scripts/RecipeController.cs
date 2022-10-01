@@ -34,20 +34,16 @@ public class RecipeController : MonoBehaviour
     {
         foreach (var ingredient in recipe.Ingredients)
         {
-            ITagResponse[] tagResponses = ingredient.Item.Container;
+            ITagResponse tagResponse = ingredient.Item.Container;
 
-            foreach (var tagResponse in tagResponses)
+            if (tagResponse == null)
             {
-                foreach (var addTag in ingredient.AddedTags)
-                {
-                    tagResponse.Add(addTag);
-                }
-
-                foreach (var removeTag in ingredient.AddedTags)
-                {
-                    tagResponse.Remove(removeTag);
-                }
+                Debug.LogError($"Unknow response from : {ingredient.Item.Name}");
+                continue;
             }
+
+            tagResponse.Add(ingredient.AddedTag);
+            tagResponse.Remove(ingredient.RemoveTag);
         }
     }
 }

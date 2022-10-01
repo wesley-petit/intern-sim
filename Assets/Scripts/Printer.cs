@@ -3,7 +3,10 @@ using UnityEngine;
 public class Printer : MonoBehaviour, ITagResponse
 {
     public ItemSO Item;
-    public MeshFilter MeshFilter;
+    public GameObject Normal;
+    public GameObject Broken;
+
+    private GameObject _currentGFX;
 
     private void Awake()
     {
@@ -18,14 +21,13 @@ public class Printer : MonoBehaviour, ITagResponse
         switch (tag)
         {
             case Tag.Normal:
-
+                ChangeGFX(Normal);
                 break;
+            
             case Tag.Broken:
+                ChangeGFX(Broken);
                 break;
-            case Tag.Empty:
-                break;
-            case Tag.Full:
-                break;
+            
             default:
                 break;
         }
@@ -34,5 +36,15 @@ public class Printer : MonoBehaviour, ITagResponse
     public void Remove(Tag tag)
     {
 
+    }
+
+    public void ChangeGFX(GameObject original)
+    {
+        if (_currentGFX)
+        {
+            Destroy(_currentGFX);
+        }
+
+        _currentGFX = Instantiate(original, transform);
     }
 }

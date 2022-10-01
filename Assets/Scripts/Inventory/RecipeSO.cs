@@ -10,11 +10,12 @@ public enum Tag
     Full
 }
 
+[System.Serializable]
 public struct UseItem
 {
     public ItemSO Item;
-    public List<Tag> AddedTags;
-    public List<Tag> RemoveTags;
+    public Tag AddedTag;
+    public Tag RemoveTag;
 }
 
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Gamagora/Recipe")]

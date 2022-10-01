@@ -9,7 +9,7 @@ public class SelectionnableItem : MonoBehaviour
     private void Awake() => _selectionController = FindObjectOfType<SelectionController>();
     private void OnMouseUp()
     {
-        Item.Container = GetComponents<ITagResponse>();
+        Item.Container = GetComponent<ITagResponse>();
         _selectionController.OnClick(Item);
     }
 }
