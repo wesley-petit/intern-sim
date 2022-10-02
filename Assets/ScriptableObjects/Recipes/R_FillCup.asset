@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: R_FillCup
   m_EditorClassIdentifier: 
   Ingredients:
-  - ItemIn: {fileID: 11400000, guid: 0c8d07db1daba3f4289fc00e995ff1e0, type: 2}
+  - ItemIn: {fileID: 11400000, guid: acd7c17ea418c924b8ab1591dd547206, type: 2}
     ItemOut: {fileID: 11400000, guid: 0c8d07db1daba3f4289fc00e995ff1e0, type: 2}
   - ItemIn: {fileID: 11400000, guid: 84d25cfe12bd1f44dbbc6057cb36b1e4, type: 2}
     ItemOut: {fileID: 11400000, guid: 9ab42fdadf609384080aeffb6704f1cf, type: 2}

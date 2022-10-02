@@ -7,7 +7,9 @@ public enum State
     Normal,
     Broken,
     Empty,
-    Full
+    Full,
+    Open,
+    Close
 }
 
 [System.Serializable]

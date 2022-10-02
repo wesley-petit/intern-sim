@@ -14,8 +14,14 @@ public class PlayAnimState : MonoBehaviour
         {
             if (states.Contains(current) && previousState != current)
             {
+                if (previousState != State.None)
+                {
+                    animator.ResetTrigger(previousState.ToString());
+                }
+
                 animator.SetTrigger(current.ToString());
                 previousState = current;
+
                 break;
             }
         }
