@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemContainer : MonoBehaviour
 {
     public ItemSO Item;
+    public UnityEvent<HashSet<State>> OnChangeState = null;
 
     private HashSet<State> AllStates = new HashSet<State>();
     private GameObject _currentGfx;
@@ -14,7 +16,6 @@ public class ItemContainer : MonoBehaviour
     {
         CleanUpState(Item, newItem);
         Item = newItem;
-        UpdateGfx(Item.Model);
     }
 
     public ItemSO GetItem() => Item;
@@ -29,15 +30,7 @@ public class ItemContainer : MonoBehaviour
 
         foreach (var newState in newItem.InitialState)
             AllStates.Add(newState);
-    }
-    
-    private void UpdateGfx(GameObject original)
-    {
-        if (_currentGfx)
-        {
-            Destroy(_currentGfx);
-        }
 
-        _currentGfx = Instantiate(original, transform);
+        OnChangeState.Invoke(AllStates);
     }
 }

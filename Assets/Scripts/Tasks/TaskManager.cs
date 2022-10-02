@@ -4,27 +4,31 @@ using UnityEngine.Events;
 
 public class TaskManager : MonoBehaviour
 {
-    public List<TaskSO> TaskAvailable = new List<TaskSO>();
+    public List<TaskSO> Tasks = new List<TaskSO>();
     private List<TaskSO> ActualTasks = new List<TaskSO>();
 
     public UnityEvent<TaskSO> OnCreateTask = null;
     public UnityEvent<TaskSO> OnCompleteTask = null;
 
-    private void Start()
-    {
-        CreateTask();
-    }
-
     public void CreateTask()
     {
         TaskSO newTask;
 
-        do
+        List<TaskSO> taskAvailable = new List<TaskSO>();
+        foreach (var taskSO in Tasks)
         {
-            int rand = Random.Range(0, TaskAvailable.Count);
-            newTask = TaskAvailable[rand];
+            if (ActualTasks.Contains(taskSO)) { continue; }
+            taskAvailable.Add(taskSO);
         }
-        while (ActualTasks.Contains(newTask));
+
+        if (taskAvailable.Count <= 0)
+        {
+            Debug.LogError("No more task available");
+            return;
+        }
+
+        int rand = Random.Range(0, taskAvailable.Count);
+        newTask = taskAvailable[rand];
 
         ActualTasks.Add(newTask);
         OnCreateTask?.Invoke(newTask);

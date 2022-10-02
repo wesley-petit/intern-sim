@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Cup
   Model: {fileID: 4692377967987650429, guid: 449c9b33d93d27d498d8bd9d0463737b, type: 3}
   Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  InitialState: 
+  InitialState: 03000000
   Container: {fileID: 0}

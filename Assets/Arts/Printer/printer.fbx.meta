@@ -1,8 +1,20 @@
 fileFormatVersion: 2
-guid: 77bf4ff31fe994e47a281c5bc3dd07cd
+guid: e3b93640b0297d9429c1ed6adeb2a7e1
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4150171671689293696
+    second: couvercle|button.001Action
+  - first:
+      74: -3212353602657250496
+    second: couvercle|couvercleAction
+  - first:
+      74: 4267115716251404887
+    second: button.001|button.001Action
+  - first:
+      74: 6134128369806271376
+    second: button.001|couvercleAction
   externalObjects: {}
   materials:
     materialImportMode: 2

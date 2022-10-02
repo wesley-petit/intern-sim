@@ -1,19 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Horloge : MonoBehaviour
 {
     public GameObject pivot;
     public float rotationSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public int maxTimeInSeconds = 10;
+    public UnityEvent OnEndTimer = null;
 
-    // Update is called once per frame
-    void Update()
+    private float timeSinceLastSpawn = 0f;
+
+    private void Update()
     {
         pivot.transform.Rotate(new Vector3(0, Time.deltaTime * rotationSpeed, 0));
+
+        timeSinceLastSpawn += Time.deltaTime;
+        if (maxTimeInSeconds < timeSinceLastSpawn)
+        {
+            timeSinceLastSpawn -= maxTimeInSeconds;
+            OnEndTimer?.Invoke();
+        }
     }
 }
