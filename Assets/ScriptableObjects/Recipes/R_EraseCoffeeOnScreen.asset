@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd1a97d5200b7a4baf6d5018baed24c, type: 3}
+  m_Name: R_EraseCoffeeOnScreen
+  m_EditorClassIdentifier: 
+  Ingredients:
+  - ItemIn: {fileID: 11400000, guid: dd0b075ace2b6d5439f29fdcb49ac86f, type: 2}
+    ItemOut: {fileID: 11400000, guid: 8fd90f5fd0bcc5647bb587049c65d671, type: 2}
+  - ItemIn: {fileID: 11400000, guid: 264349e9ed4dce34bb1f645ac8268d6a, type: 2}
+    ItemOut: {fileID: 11400000, guid: 264349e9ed4dce34bb1f645ac8268d6a, type: 2}

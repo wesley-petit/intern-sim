@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c50732956e3d644da805fa339b63937, type: 3}
-  m_Name: I_Printer
+  m_Name: I_ErasedDocument
   m_EditorClassIdentifier: 
-  Name: Printer
-  Model: {fileID: 1678487781463062073, guid: dd199812d62f14c4f953eb7fb6b864e1, type: 3}
-  Sprite: {fileID: 21300000, guid: c5f7d5110efa11446aff26a22c8d7067, type: 3}
+  Name: ErasedDocument
+  Sprite: {fileID: 21300000, guid: 54a371d4bafa22542a51b54eba32c1d7, type: 3}
   InitialState: 
   Container: {fileID: 0}
