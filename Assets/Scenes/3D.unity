@@ -320,9 +320,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8549769965398100865, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 30b58debf26d7074c816691166b4e9e9, type: 2}
+    - target: {fileID: -3289674471058131000, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00cd16c7d0bb0964a8f0805932afd089, type: 2}
     - target: {fileID: 919132149155446097, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
       propertyPath: m_Name
       value: bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503940555670307712, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503940555670307712, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f59bd1a83280a5f4e9cbe145577c79a0, type: 3}
@@ -462,6 +478,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3312973527684774850, guid: 1d0a4ad0e8c44ba4e81e79a2676a915a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00cd16c7d0bb0964a8f0805932afd089, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d0a4ad0e8c44ba4e81e79a2676a915a, type: 3}
       propertyPath: m_Name
       value: "cafetie\u0300re"
