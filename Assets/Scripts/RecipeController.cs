@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RecipeController : MonoBehaviour
 {
     public RecipeSO[] AllRecipes;
+    public UnityEvent<RecipeSO> OnCompleteRecipe = null;
 
     public void CheckRecipes()
     {
@@ -60,6 +62,8 @@ public class RecipeController : MonoBehaviour
     
     public void Execute(RecipeSO recipe)
     {
+        OnCompleteRecipe?.Invoke(recipe);
+
         foreach (var ingredient in recipe.Ingredients)
         {
             ItemContainer itemContainer = ingredient.ItemIn.Container;

@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory playerInventory;
 
-    public List<ItemSO> Items = new();
+    public List<ItemSO> Items = new List<ItemSO>();
 
     public UnityEvent OnAdd;
     public UnityEvent OnRemove;

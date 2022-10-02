@@ -5,7 +5,7 @@ public class ItemContainer : MonoBehaviour
 {
     public ItemSO Item;
 
-    private HashSet<State> AllStates = new();
+    private HashSet<State> AllStates = new HashSet<State>();
     private GameObject _currentGfx;
 
     private void Awake() => Load(Item);

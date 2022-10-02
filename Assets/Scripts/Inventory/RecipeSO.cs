@@ -20,5 +20,5 @@ public struct ItemTransformation
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Gamagora/Recipe")]
 public class RecipeSO : ScriptableObject
 {
-    public List<ItemTransformation> Ingredients = new();
+    public List<ItemTransformation> Ingredients = new List<ItemTransformation>();
 }
