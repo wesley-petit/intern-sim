@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
   m_Name: T_PrinterCoffee
   m_EditorClassIdentifier: 
-  Description: Spill coffee the scanner printer !
-  Conditions: {fileID: 11400000, guid: 2b0f5ed00ef30cd4cba10dc31e780276, type: 2}
+  Description: Spill coffee on your printer !
+  Condition: {fileID: 11400000, guid: c805ad2fdc32ff0408b8c70e8761eed7, type: 2}

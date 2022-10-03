@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd1a97d5200b7a4baf6d5018baed24c, type: 3}
+  m_Name: R_SpillCoffeeOnPrinter
+  m_EditorClassIdentifier: 
+  Ingredients:
+  - ItemIn: {fileID: 11400000, guid: 38996f682d4565944ac04f50b5c4891f, type: 2}
+    ItemOut: {fileID: 11400000, guid: ab2796c6c7d7c594fb91732b7e33b8c1, type: 2}
+  - ItemIn: {fileID: 11400000, guid: 9ab42fdadf609384080aeffb6704f1cf, type: 2}
+    ItemOut: {fileID: 11400000, guid: 84d25cfe12bd1f44dbbc6057cb36b1e4, type: 2}

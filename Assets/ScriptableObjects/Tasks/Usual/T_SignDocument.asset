@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_SignDocument
   m_EditorClassIdentifier: 
   Description: Sign the document
-  Conditions: {fileID: 11400000, guid: 6195c2d735d76ee4db31d808f76dd03c, type: 2}
+  Condition: {fileID: 11400000, guid: 6195c2d735d76ee4db31d808f76dd03c, type: 2}

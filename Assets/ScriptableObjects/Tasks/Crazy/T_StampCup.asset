@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
   m_Name: T_StampCup
   m_EditorClassIdentifier: 
-  Description: 
-  Conditions: {fileID: 0}
+  Description: Stamp your cup !
+  Condition: {fileID: 11400000, guid: 58628a244a125b64bb8117c67b6a1757, type: 2}

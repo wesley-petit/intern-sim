@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
   m_Name: T_TrashDocument
   m_EditorClassIdentifier: 
-  Description: Trash the "you're fired" document
-  Conditions: {fileID: 11400000, guid: fc18ca3fc55f7414b9cc97ac39aa21bf, type: 2}
+  Description: Trash the document
+  Condition: {fileID: 11400000, guid: fc18ca3fc55f7414b9cc97ac39aa21bf, type: 2}

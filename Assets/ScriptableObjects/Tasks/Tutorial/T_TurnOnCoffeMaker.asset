@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
   m_Name: T_TurnOnCoffeMaker
   m_EditorClassIdentifier: 
-  Description: Turn the coffee machine on !
+  Description: Make a coffee !
   Condition: {fileID: 11400000, guid: b2556c2cd766ce84baee3f6e690c9094, type: 2}

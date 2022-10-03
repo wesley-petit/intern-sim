@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_RepairPrinter
   m_EditorClassIdentifier: 
   Description: Fix your printer
-  Conditions: {fileID: 11400000, guid: b737c4aa25b7ec647912a3930ce06eac, type: 2}
+  Condition: {fileID: 11400000, guid: b737c4aa25b7ec647912a3930ce06eac, type: 2}

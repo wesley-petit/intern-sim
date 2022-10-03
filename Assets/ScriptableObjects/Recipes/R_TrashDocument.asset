@@ -15,5 +15,5 @@ MonoBehaviour:
   Ingredients:
   - ItemIn: {fileID: 11400000, guid: 21ecbf2fa97079144bacc2f71ba7d616, type: 2}
     ItemOut: {fileID: 11400000, guid: 21ecbf2fa97079144bacc2f71ba7d616, type: 2}
-  - ItemIn: {fileID: 11400000, guid: 93ae408324e868b4891ba2ed1cd847c8, type: 2}
-    ItemOut: {fileID: 0}
+  - ItemIn: {fileID: 11400000, guid: 371d1f639736bbc4cadb47865d8a1130, type: 2}
+    ItemOut: {fileID: 11400000, guid: 371d1f639736bbc4cadb47865d8a1130, type: 2}

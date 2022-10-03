@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: R_ScanDocument
   m_EditorClassIdentifier: 
   Ingredients:
-  - ItemIn: {fileID: 11400000, guid: 16c390091ef529243a7355ce60ebfe49, type: 2}
-    ItemOut: {fileID: 11400000, guid: 16c390091ef529243a7355ce60ebfe49, type: 2}
+  - ItemIn: {fileID: 11400000, guid: 38996f682d4565944ac04f50b5c4891f, type: 2}
+    ItemOut: {fileID: 11400000, guid: 38996f682d4565944ac04f50b5c4891f, type: 2}
   - ItemIn: {fileID: 11400000, guid: 371d1f639736bbc4cadb47865d8a1130, type: 2}
-    ItemOut: {fileID: 11400000, guid: 16c390091ef529243a7355ce60ebfe49, type: 2}
+    ItemOut: {fileID: 11400000, guid: 36131af5eac2ada4e97fda49aca23233, type: 2}

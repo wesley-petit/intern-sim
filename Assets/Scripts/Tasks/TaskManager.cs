@@ -13,41 +13,54 @@ public class TaskManager : MonoBehaviour
     private List<TaskSO> Tasks = new List<TaskSO>();
     private List<TaskSO> ActiveTasks = new List<TaskSO>();
 
-    private void Awake()
+    public int MaxTaskAccepted = 6;
+    public UnityEvent OnWin;
+    public UnityEvent OnLose;
+
+    private void Awake() => CreateTasks();
+
+    public void CreateTasks()
     {
-        CreateTask();
-        CreateTask();
-    }
-
-    public void CreateTask()
-    {
-        TaskSO newTask;
-
-        if (ActiveTasks.Count <= 0)
+        for (int i = 0; i < 2; i++)
         {
-            Tasks = TaskRefiller.Refill();
-        }
-        
-        List<TaskSO> taskAvailable = new List<TaskSO>();
-        foreach (var taskSO in Tasks)
-        {
-            if (ActiveTasks.Contains(taskSO)) { continue; }
-            taskAvailable.Add(taskSO);
-        }
+            if (Tasks.Count <= 0)
+            {
+                Tasks = TaskRefiller.Refill();
+            }
+            if (Tasks.Count <= 0)
+            {
+                Debug.Log("Win");
+                OnWin?.Invoke();
+                return;
+            }
 
-        if (taskAvailable.Count <= 0)
-        {
-            Debug.LogError("No more task available");
-            return;
+            if (ActiveTasks.Count == MaxTaskAccepted)
+            {
+                Debug.Log("Lose");
+                OnLose?.Invoke();
+                return;
+            }
+            
+            // List<TaskSO> taskAvailable = new List<TaskSO>();
+            // foreach (var taskSO in Tasks)
+            // {
+            //     if (ActiveTasks.Contains(taskSO)) { continue; }
+            //     taskAvailable.Add(taskSO);
+            // }
+            //
+            // if (taskAvailable.Count <= 0)
+            // {
+            //     Debug.LogError("No more task available");
+            //     return;
+            // }
+
+            // int rand = Random.Range(0, taskAvailable.Count);
+            // newTask = taskAvailable[rand];
+            TaskSO newTask = Tasks[0];
+            Tasks.Remove(newTask);
+            ActiveTasks.Add(newTask);
+            OnCreateTask?.Invoke(newTask);
         }
-
-        int rand = Random.Range(0, taskAvailable.Count);
-        newTask = taskAvailable[rand];
-
-        Debug.Log(newTask.Description);
-        Tasks.Remove(newTask);
-        ActiveTasks.Add(newTask);
-        OnCreateTask?.Invoke(newTask);
     }
 
     public void CheckCompleteTask(RecipeSO recipe)

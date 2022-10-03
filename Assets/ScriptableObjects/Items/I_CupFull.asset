@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: I_CupFull
   m_EditorClassIdentifier: 
   Name: Cup
-  Model: {fileID: 4692377967987650429, guid: fbf00590422d4584c8d194e47ae91a6b, type: 3}
-  Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: 21300000, guid: c793d03d499e6594ab0e3fc35625121e, type: 3}
   InitialState: 04000000
   Container: {fileID: 0}

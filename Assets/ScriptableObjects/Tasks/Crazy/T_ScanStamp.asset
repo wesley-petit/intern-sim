@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_ScanStamp
   m_EditorClassIdentifier: 
   Description: Scan the rubber stamp
-  Conditions: {fileID: 11400000, guid: 00fb2816418a833448135b2be217e8f2, type: 2}
+  Condition: {fileID: 11400000, guid: 00fb2816418a833448135b2be217e8f2, type: 2}

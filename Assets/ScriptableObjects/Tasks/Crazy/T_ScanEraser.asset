@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_ScanEraser
   m_EditorClassIdentifier: 
   Description: Scan your eraser
-  Conditions: {fileID: 11400000, guid: bd48e3a435ebc4847992d58ffd1ed5f9, type: 2}
+  Condition: {fileID: 11400000, guid: bd48e3a435ebc4847992d58ffd1ed5f9, type: 2}

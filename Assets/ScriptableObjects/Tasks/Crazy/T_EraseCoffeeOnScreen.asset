@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
   m_Name: T_EraseCoffeeOnScreen
   m_EditorClassIdentifier: 
-  Description: 
-  Conditions: {fileID: 0}
+  Description: Clean your screen
+  Condition: {fileID: 11400000, guid: 62ed41adf5310cb498b0796b281ff92e, type: 2}

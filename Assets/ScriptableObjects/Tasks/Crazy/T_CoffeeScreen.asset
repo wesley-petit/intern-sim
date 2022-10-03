@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_CoffeeScreen
   m_EditorClassIdentifier: 
   Description: Spill Coffee on your computer screen
-  Conditions: {fileID: 11400000, guid: a54c02ac6938d44429ad3f6e013a1d3b, type: 2}
+  Condition: {fileID: 11400000, guid: a54c02ac6938d44429ad3f6e013a1d3b, type: 2}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_EraseDocument
   m_EditorClassIdentifier: 
   Description: Erase the errors on the document
-  Conditions: {fileID: 11400000, guid: e4ed69cf827ee0c48af0e28f418e8b1b, type: 2}
+  Condition: {fileID: 11400000, guid: e4ed69cf827ee0c48af0e28f418e8b1b, type: 2}

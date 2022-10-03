@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_ScanDocument
   m_EditorClassIdentifier: 
   Description: Scan the document
-  Conditions: {fileID: 11400000, guid: 932743d2e35cfbd42b83b579a5cee024, type: 2}
+  Condition: {fileID: 11400000, guid: 932743d2e35cfbd42b83b579a5cee024, type: 2}

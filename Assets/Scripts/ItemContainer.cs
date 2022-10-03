@@ -14,8 +14,9 @@ public class ItemContainer : MonoBehaviour
 
     public void Load(ItemSO newItem)
     {
-        CleanUpState(Item, newItem);
+        ItemSO oldItem = Item;
         Item = newItem;
+        CleanUpState(oldItem, Item);
     }
 
     public ItemSO GetItem() => Item;
@@ -31,6 +32,11 @@ public class ItemContainer : MonoBehaviour
         foreach (var newState in newItem.InitialState)
             AllStates.Add(newState);
 
-        OnChangeState.Invoke(AllStates);
+        if (AllStates.Contains(State.Erased))
+        {
+            AllStates.Clear();
+        }
+        
+        OnChangeState?.Invoke(AllStates);
     }
 }

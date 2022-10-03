@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_StampDocument
   m_EditorClassIdentifier: 
   Description: Stamp the document
-  Conditions: {fileID: 11400000, guid: af7489fee02cb5e42987f9cfcdaf5d5d, type: 2}
+  Condition: {fileID: 11400000, guid: af7489fee02cb5e42987f9cfcdaf5d5d, type: 2}

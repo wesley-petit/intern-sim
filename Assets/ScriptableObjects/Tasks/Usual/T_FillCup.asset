@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: T_FillCup
   m_EditorClassIdentifier: 
   Description: Fill the cup with coffee
-  Conditions: {fileID: 11400000, guid: 4df03f826e1048f4097250dfb4ffea54, type: 2}
+  Condition: {fileID: 11400000, guid: 4df03f826e1048f4097250dfb4ffea54, type: 2}
