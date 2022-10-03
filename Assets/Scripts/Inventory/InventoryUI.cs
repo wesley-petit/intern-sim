@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
         int slotIndex = 0;
         foreach (var item in Inventory.playerInventory.Items)
         {
-            if (slots.Length < slotIndex - 1)
+            if (slots.Length - 1 < slotIndex)
             {
                 Debug.LogError("No more slots available.");
                 break;

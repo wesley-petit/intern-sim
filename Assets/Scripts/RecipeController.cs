@@ -5,15 +5,21 @@ public class RecipeController : MonoBehaviour
 {
     public RecipeSO[] AllRecipes;
     public UnityEvent<RecipeSO> OnCompleteRecipe = null;
-
+    public UnityEvent OnFailedRecipe;
+    
     public void CheckRecipes()
     {
         RecipeSO recipe = GetRecipe();
 
         if (recipe)
         {
-            EmptyRecipeSlot(recipe);
             Execute(recipe);
+            Inventory.playerInventory.Empty();
+        }
+        else if (Inventory.playerInventory.IsFull())
+        {
+            OnFailedRecipe?.Invoke();
+            Inventory.playerInventory.Empty();
         }
     }
     
@@ -43,21 +49,6 @@ public class RecipeController : MonoBehaviour
         }
 
         return recipeFound;
-    }
-
-    private void EmptyRecipeSlot(RecipeSO recipe)
-    {
-        foreach (var ingredient in recipe.Ingredients)
-        {
-            ItemContainer itemContainer = ingredient.ItemIn.Container;
-            if (itemContainer == null)
-            {
-                Debug.LogError($"Unknow response from : {ingredient.ItemIn.Name}");
-                continue;
-            }
-
-            Inventory.playerInventory.Remove(itemContainer.GetItem());
-        }
     }
     
     public void Execute(RecipeSO recipe)

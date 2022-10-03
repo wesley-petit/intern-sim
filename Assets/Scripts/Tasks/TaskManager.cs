@@ -4,20 +4,26 @@ using UnityEngine.Events;
 
 public class TaskManager : MonoBehaviour
 {
-    public List<TaskSO> Tasks = new List<TaskSO>();
-    private List<TaskSO> ActualTasks = new List<TaskSO>();
-
     public UnityEvent<TaskSO> OnCreateTask = null;
     public UnityEvent<TaskSO> OnCompleteTask = null;
+    public TaskRefiller TaskRefiller;
+
+    private List<TaskSO> Tasks = new List<TaskSO>();
+    private List<TaskSO> ActiveTasks = new List<TaskSO>();
 
     public void CreateTask()
     {
         TaskSO newTask;
 
+        if (ActiveTasks.Count <= 0)
+        {
+            ActiveTasks = TaskRefiller.Refill();
+        }
+        
         List<TaskSO> taskAvailable = new List<TaskSO>();
         foreach (var taskSO in Tasks)
         {
-            if (ActualTasks.Contains(taskSO)) { continue; }
+            if (ActiveTasks.Contains(taskSO)) { continue; }
             taskAvailable.Add(taskSO);
         }
 
@@ -30,7 +36,8 @@ public class TaskManager : MonoBehaviour
         int rand = Random.Range(0, taskAvailable.Count);
         newTask = taskAvailable[rand];
 
-        ActualTasks.Add(newTask);
+        Tasks.Remove(newTask);
+        ActiveTasks.Add(newTask);
         OnCreateTask?.Invoke(newTask);
     }
 
@@ -40,7 +47,7 @@ public class TaskManager : MonoBehaviour
 
         if (completeTask != null)
         {
-            ActualTasks.Remove(completeTask);
+            ActiveTasks.Remove(completeTask);
             OnCompleteTask?.Invoke(completeTask);
         }
     }
@@ -49,11 +56,11 @@ public class TaskManager : MonoBehaviour
     {
         TaskSO completeTask = null;
 
-        for (int i = 0; i < ActualTasks.Count; i++)
+        for (int i = 0; i < ActiveTasks.Count; i++)
         {
-            if (ActualTasks[i].Conditions == recipe)
+            if (ActiveTasks[i].Conditions == recipe)
             {
-                completeTask = ActualTasks[i];
+                completeTask = ActiveTasks[i];
                 break;
             }
         }
