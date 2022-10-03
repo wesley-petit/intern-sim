@@ -17,16 +17,16 @@ public class CursorController : MonoBehaviour
     private Vector2 HotspotPosition = new Vector2(256, 256);
     public void ShowNormal()
     {
-        Cursor.SetCursor(Normal, HotspotPosition, CursorMode.Auto);
+        // Cursor.SetCursor(Normal, HotspotPosition, CursorMode.Auto);
     }
     
     public void ShowHand()
     {
-        Cursor.SetCursor(Hand, HotspotPosition, CursorMode.Auto);
+        // Cursor.SetCursor(Hand, HotspotPosition, CursorMode.Auto);
     }
 
     public void ShowGrapHand()
     {
-        Cursor.SetCursor(GrapHand, HotspotPosition, CursorMode.Auto);
+        // Cursor.SetCursor(GrapHand, HotspotPosition, CursorMode.Auto);
     }
 }
