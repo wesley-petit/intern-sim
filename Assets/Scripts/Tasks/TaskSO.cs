@@ -4,5 +4,5 @@ using UnityEngine;
 public class TaskSO : ScriptableObject
 {
     public string Description;
-    public RecipeSO Conditions;
+    public RecipeSO Condition;
 }

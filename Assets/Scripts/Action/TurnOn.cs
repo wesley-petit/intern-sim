@@ -1,20 +1,28 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TurnOn : MonoBehaviour
 {
-    public MonoBehaviour[] ComponentsOff;
-
+    public UnityEvent<bool> OnTurn;
+    public Renderer Renderer;
+    public Material OnMaterial;
+    
     private void Awake()
     {
-        foreach (var current in ComponentsOff)
-            current.enabled = false;
+        OnTurn?.Invoke(false);
     }
 
     private void OnMouseUp()
     {
-        foreach (var current in ComponentsOff)
-            current.enabled = true;
+        OnTurn?.Invoke(true);
+        Renderer.material = OnMaterial;
         
+        if (GetComponent<Outline>())
+        {
+            Destroy(GetComponent<Outline>());
+        }
+        Destroy(GetComponent<Collider>());
         Destroy(this);
     }
 }

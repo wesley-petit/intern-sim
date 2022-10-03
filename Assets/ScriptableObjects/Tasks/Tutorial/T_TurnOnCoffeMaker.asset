@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c50732956e3d644da805fa339b63937, type: 3}
-  m_Name: I_WritttenDocument
+  m_Script: {fileID: 11500000, guid: a991826ab7fe35042bdda2c9419cf866, type: 3}
+  m_Name: T_TurnOnCoffeMaker
   m_EditorClassIdentifier: 
-  Name: WrittenDocument
-  Sprite: {fileID: 21300000, guid: 54a371d4bafa22542a51b54eba32c1d7, type: 3}
-  InitialState: 0a000000
-  Container: {fileID: 0}
+  Description: Turn the coffee machine on !
+  Condition: {fileID: 11400000, guid: b2556c2cd766ce84baee3f6e690c9094, type: 2}

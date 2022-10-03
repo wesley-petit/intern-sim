@@ -1,14 +1,18 @@
 using UnityEngine;
 
-public class PlayAnimation : MonoBehaviour
+public class ActionItem : MonoBehaviour
 {
-    public Animator Animator;
     public Outline Outline;
-
-    private bool bOpen = false;
+    public TaskManager TaskManager;
+    public RecipeSO Recipe;
+    
+    private ItemContainer _itemContainer;
+    private SelectionController _selectionController;
 
     private void Awake()
     {
+        _itemContainer = GetComponent<ItemContainer>();
+        _selectionController = FindObjectOfType<SelectionController>();
         if (Outline)
         {
             Outline.enabled = false;
@@ -23,25 +27,16 @@ public class PlayAnimation : MonoBehaviour
         }
         CursorController.Instance.ShowHand();
     }
-    
+
     private void OnMouseDown()
     {
         CursorController.Instance.ShowGrapHand();
     }
 
-
     private void OnMouseUp()
     {
         CursorController.Instance.ShowHand();
-        bOpen = !bOpen;
-
-        if (bOpen)
-        {
-            Animator.SetBool("Open", bOpen);
-            Destroy(Outline);
-            Destroy(GetComponent<Collider>());
-            Destroy(this);
-        }
+        TaskManager.CheckCompleteTask(Recipe);
     }
     
     private void OnMouseExit()

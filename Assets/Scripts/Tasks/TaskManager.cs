@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class TaskManager : MonoBehaviour
 {
@@ -11,13 +13,19 @@ public class TaskManager : MonoBehaviour
     private List<TaskSO> Tasks = new List<TaskSO>();
     private List<TaskSO> ActiveTasks = new List<TaskSO>();
 
+    private void Awake()
+    {
+        CreateTask();
+        CreateTask();
+    }
+
     public void CreateTask()
     {
         TaskSO newTask;
 
         if (ActiveTasks.Count <= 0)
         {
-            ActiveTasks = TaskRefiller.Refill();
+            Tasks = TaskRefiller.Refill();
         }
         
         List<TaskSO> taskAvailable = new List<TaskSO>();
@@ -36,6 +44,7 @@ public class TaskManager : MonoBehaviour
         int rand = Random.Range(0, taskAvailable.Count);
         newTask = taskAvailable[rand];
 
+        Debug.Log(newTask.Description);
         Tasks.Remove(newTask);
         ActiveTasks.Add(newTask);
         OnCreateTask?.Invoke(newTask);
@@ -43,7 +52,7 @@ public class TaskManager : MonoBehaviour
 
     public void CheckCompleteTask(RecipeSO recipe)
     {
-        TaskSO completeTask = GetCompleTaskFor(recipe);
+        TaskSO completeTask = GetCompleteTaskFor(recipe);
 
         if (completeTask != null)
         {
@@ -52,13 +61,13 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    private TaskSO GetCompleTaskFor(RecipeSO recipe)
+    private TaskSO GetCompleteTaskFor(RecipeSO recipe)
     {
         TaskSO completeTask = null;
 
         for (int i = 0; i < ActiveTasks.Count; i++)
         {
-            if (ActiveTasks[i].Conditions == recipe)
+            if (ActiveTasks[i].Condition == recipe)
             {
                 completeTask = ActiveTasks[i];
                 break;

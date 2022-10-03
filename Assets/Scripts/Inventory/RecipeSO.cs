@@ -9,7 +9,12 @@ public enum State
     Empty,
     Full,
     Open,
-    Close
+    Close,
+    Dirty,
+    Erased,
+    Scanned,
+    Writed,
+    Stamped
 }
 
 [System.Serializable]
