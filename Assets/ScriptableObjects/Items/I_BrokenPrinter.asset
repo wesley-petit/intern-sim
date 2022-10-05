@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: I_BrokenPrinter
   m_EditorClassIdentifier: 
   Name: Printer
-  Model: {fileID: 1678487781463062073, guid: 9ba5db19ea7b2a642b23635b896cd4ab, type: 3}
-  Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: 21300000, guid: f96caf59d73216b44b3789205c4a084f, type: 3}
   InitialState: 02000000
   Container: {fileID: 0}

@@ -29,6 +29,11 @@ public class TaskManager : MonoBehaviour
             }
             if (Tasks.Count <= 0)
             {
+                if (ActiveTasks.Count != 0)
+                {
+                    return;
+                }
+            
                 Debug.Log("Win");
                 OnWin?.Invoke();
                 return;
